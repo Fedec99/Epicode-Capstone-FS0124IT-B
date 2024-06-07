@@ -1,0 +1,51 @@
+<div class="col-12 h-100 w-100 m-0">
+  <div class="row m-0 h-100">
+    <div class="d-none d-md-inline col-3 bg-success h-100 p-4">
+      <div class="row">
+        <div class="col-12 h-25 uimg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#ffffff" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+          </svg>
+          <h3><b>{{user.name}}</b></h3>
+          <h3>{{user.username}}</h3>
+          <p>Main currency: {{user.currency}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-9 h-100 szone">
+      <div class="row" *ngIf="supp == false">
+        <div class="col-12 p-3">
+          <div class="logout card" (click)="logout()">
+            <p class="m-0"><b>Log out</b></p>
+          </div>
+        </div>
+        <div class="col-12 p-3">
+          <div class="logout card">
+            <p class="m-0"><b>Clear all data</b></p>
+          </div>
+        </div>
+        <div class="col-12 p-3 mt-5">
+          <div class="sup card" (click)="supp = true">
+            <p class="m-0"><b>Contact support</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="supp == true">
+        <div class="col-12 p-3 ">
+          <div class="card rounded-5 p-3">
+            <h2 class="m-0 mb-2 text-center"><b>Contact support</b></h2>
+            <form #f="ngForm" (ngSubmit)="emailHandler($event)">
+              <input  class="form-control mb-2" [ngModel]="user.username" type="text" name="user_name" readonly>
+              <input  class="form-control mb-2" [ngModel]="user.email" type="email" name="user_email" readonly>
+              <textarea  class="form-control" ngModel name="message" rows="9" cols="25" placeholder="Write your message here" required></textarea>
+              <div class="d-grid gap-2 my-3">
+                <button class="btn btn-success" type="submit">Send</button>
+              </div>
+              <p class="text-center">We will reply as soon as possible, thank you for your understanding.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

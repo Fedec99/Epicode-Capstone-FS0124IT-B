@@ -1,0 +1,51 @@
+<div class="col-12 h-100 w-100 m-0" (click)="error = undefined">
+  <div class="row m-0 h-100">
+    <div class="d-none d-lg-inline col-3 bg-success h-100 p-4">
+      <div class="row h-100">
+        <div class="col-12 p-3 h-100 overflow-auto">
+          <h3 class="text-light mb-2 text-center"><b>WATCHLIST</b></h3>
+          <div *ngFor="let asset of assets" >
+            <div class="watch p-2 mb-2" *ngIf="asset.ticker != currency" [routerLink]="['marketview/' + checkAndGiveS(asset.ticker)]">
+              <p class="m-0 ps-3">
+                {{asset.ticker}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-9 h-100">
+      <div class="row h-100">
+        <div class="col-12 upmzone p-4">
+          <form #f="ngForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3 d-flex">
+              <input type="text" ngModel class="search" id="keywords"  name="keywords" placeholder="Search Asset" required />
+              <button class="btn btn-success" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+          <div class="err p-2 mt-1" *ngIf="error != undefined">
+            {{error}}
+          </div>
+        </div>
+        <div class="results col-12">
+          <div class="row h-100 overflow-auto">
+            <div class="col-12 p-3" *ngFor="let asset of matches">
+              <div class="card asset" [routerLink]="['marketview/' + checkAndGiveS(asset.symbol)]">
+                <div class="card-body">
+                  <h4 class="card-title"><b class="ticker">{{asset.symbol}}</b> ({{asset.instrument_name}} )</h4>
+                  <p class="card-text m-0"><b>Type:</b> {{asset.instrument_type}}</p>
+                  <p class="card-text m-0"><b>Zone:</b> {{asset.country}}</p>
+                  <p class="card-text"><b>Exchange:</b> {{asset.exchange}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

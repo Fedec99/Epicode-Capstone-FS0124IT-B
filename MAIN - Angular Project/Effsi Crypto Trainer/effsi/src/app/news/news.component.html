@@ -1,0 +1,28 @@
+<div class="col-12 h-100 p-3">
+  <div class="row h-100 box p-5">
+    <div class="col-12" *ngIf="load == true">
+      <div class="loader"></div>
+    </div>
+    <div class="col-12 h-100" *ngIf="load == false">
+      <div class="row overflow-auto h-100">
+        <div class="col-6 p-4" *ngFor="let n of news.data">
+          <div class="card data p-4">
+            <img class="card-img-top" src="{{n.attributes.gettyImageUrl}}" alt="Article Image">
+            <div class="card-body text-center">
+              <h4 class="card-title"><b>{{n.attributes.title}}</b></h4>
+              <button class="btn btn-outline-success" (click)="goToArticle(n.links.self)">
+                GO TO THE ARTICLE
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <p class="text-center w-100 text-dark">Articles powered by <b>https://seekingalpha.com</b></p>
+      </div>
+    </div>
+
+  </div>
+</div>

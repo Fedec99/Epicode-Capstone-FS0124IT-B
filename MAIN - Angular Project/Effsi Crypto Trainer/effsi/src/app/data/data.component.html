@@ -1,0 +1,91 @@
+<div class="col-12 h-100 p-3">
+  <div class="row h-100 box p-5">
+    <div class="col-12 card data p-4 mb-3" (click)="dataByDiversification()">
+      <h4 class="m-0">Total <b>diversification</b></h4>
+    </div>
+    <div class="col-12 card data pie p-5 mb-3 h-75" *ngIf="bydiversification == true">
+
+      <div class="col-6">
+        <canvas id="bydiversification"></canvas>
+      </div>
+      <div class="col-6 overflow-auto">
+        <div class="row">
+          <div class="col-5">
+            <p *ngFor="let n of names"><b>{{n}}</b></p>
+          </div>
+          <div class="col-4">
+            <p  *ngFor="let v of valsss">{{v | number: '1.2-2'}} {{currency}}</p>
+          </div>
+          <div class="col-3">
+            <p  *ngFor="let v of valsss"><b class="border-bottom border-3 border-success">{{(v * 100)/tottt | number: '1.2-2'}}%</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 card data p-4 mb-3" (click)="dataByCountry()">
+      <h4 class="m-0">Allocation by <b>country</b></h4>
+    </div>
+    <div class="col-12 card data pie p-5 mb-3 h-75" *ngIf="bycountry == true">
+
+      <div class="col-6">
+        <canvas id="bycountry"></canvas>
+      </div>
+      <div class="col-6 overflow-auto">
+        <div class="row">
+          <div class="col-5">
+            <p *ngFor="let c of countries"><b>{{c}}</b></p>
+          </div>
+          <div class="col-4">
+            <p  *ngFor="let v of values">{{v | number: '1.2-2'}} {{currency}}</p>
+          </div>
+          <div class="col-3">
+            <p  *ngFor="let v of values"><b class="border-bottom border-3 border-success">{{(v * 100)/total | number: '1.2-2'}}%</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 card data p-4 mb-3" (click)="dataByType()">
+      <h4 class="m-0">Allocation by <b>type</b></h4>
+    </div>
+    <div class="col-12 card data pie p-5 mb-3 h-75" *ngIf="bytype == true">
+      <div class="col-6">
+        <canvas id="bytype"></canvas>
+      </div>
+      <div class="col-6 overflow-auto">
+        <div class="row">
+          <div class="col-5">
+            <p *ngFor="let t of types"><b>{{t}}</b></p>
+          </div>
+          <div class="col-4">
+            <p  *ngFor="let v of vals">{{v | number: '1.2-2'}} {{currency}}</p>
+          </div>
+          <div class="col-3">
+            <p  *ngFor="let v of vals"><b class="border-bottom border-3 border-success">{{(v * 100)/tot | number: '1.2-2'}}%</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 card data p-4 mb-3" (click)="dataByIntermediary()">
+      <h4 class="m-0">Allocation by <b>intermediary</b></h4>
+    </div>
+    <div class="col-12 card data pie p-5 mb-3 h-75" *ngIf="byintermediary == true">
+      <div class="col-6">
+        <canvas id="byintermediary"></canvas>
+      </div>
+      <div class="col-6 overflow-auto">
+        <div class="row">
+          <div class="col-5">
+            <p *ngFor="let i of intermediarys"><b>{{i}}</b></p>
+          </div>
+          <div class="col-4">
+            <p  *ngFor="let v of valss">{{v | number: '1.2-2'}} {{currency}}</p>
+          </div>
+          <div class="col-3">
+            <p  *ngFor="let v of valss"><b class="border-bottom border-3 border-success">{{(v * 100)/tott | number: '1.2-2'}}%</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

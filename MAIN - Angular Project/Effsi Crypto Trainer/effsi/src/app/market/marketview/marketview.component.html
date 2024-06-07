@@ -1,0 +1,35 @@
+<div class="col-12 h-100 w-100 m-0" (click)="error = undefined">
+  <div class="row m-0 h-100">
+    <div class="col-12 h-100">
+      <div class="row data" *ngIf="error == undefined">
+        <div class="col-3 p-4">
+          <h1 class="name">{{asset.symbol}}</h1>
+        </div>
+        <div class="col-6 p-4">
+          <h1>{{values[0].close | number: '1.2-2'}} {{asset.currency}}</h1>
+        </div>
+        <div class="col-3 p-3">
+          <div class="change p-3" [style.background-color]="((values[0].close-values[0].open)*100)/values[0].open| togpercent">
+            <h2 class="text-light m-0">{{((values[0].close-values[0].open)*100)/values[0].open | number: '1.2-2'}}%</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row chart">
+        <div class="col-12 h-100 p-3">
+          <div class="err p-2 mt-1" *ngIf="error != undefined">
+            {{error}}
+          </div>
+          <div class="card p-2" *ngIf="error == undefined">
+          <canvas id="assetchart"></canvas>
+          </div>
+          <div class="d-none d-lg-block p-2 pt-3 times text-center">
+            <button class="btn btn-success p-2 px-5" (click)="getMarketDailyData('1h')"><b>1H</b></button>
+            <button class="btn btn-success p-2 px-5 mx-4" (click)="getMarketDailyData('1day')"><b>1D</b></button>
+            <button class="btn btn-success p-2 px-5 me-4" (click)="getMarketDailyData('1week')"><b>1W</b></button>
+            <button class="btn btn-success p-2 px-5" (click)="getMarketDailyData('1month')"><b>1M</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

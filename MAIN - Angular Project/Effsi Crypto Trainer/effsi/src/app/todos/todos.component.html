@@ -1,0 +1,93 @@
+<div class="col-12 h-100 w-100 m-0" *ngIf="todomaker == false">
+  <div class="row m-0 h-100">
+    <div class="d-none d-lg-inline col-3 bg-success h-100 p-4">
+      <div class="row h-50">
+        <div class="col-12 p-3 h-100">
+          <h3 class="text-light mb-5 text-center"><b>TASKS PANEL</b></h3>
+            <div class="col-12 h-25 add">
+              <div class="d-grid gap-2 mb-4">
+                <button class="btn btn-light" (click)="findAll()"><b>SHOW ALL</b></button>
+              </div>
+              <div class="d-grid gap-2 mb-4">
+                <button class="btn btn-light" (click)="findCompleted()"><b>SHOW COMPLETED</b></button>
+              </div>
+              <div class="d-grid gap-2 mb-4">
+                <button class="btn btn-light" (click)="findPending()"><b>SHOW PENDING</b></button>
+              </div>
+              <div class="d-grid gap-2 mb-5">
+                <button class="btn btn-light" (click)="todomaker = true"><b>ADD TASK</b></button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row h-25">
+        <div class="col-12 p-3 h-100 bb">
+          <h5 class="text-light mb-2 "><b>TASKS SITUATION</b></h5>
+          <div class="bc">
+            <div class="ft" [style.width]="todos | togsituation">
+            </div>
+          </div>
+          <p class="text-light mb-2 "><b>{{todos | togsituation }} </b>completed</p>
+        </div>
+      </div>
+      <div class="row h-25 p-3">
+        <div class="col-12 h-100 del">
+          <div class="d-grid gap-2 mb-5">
+
+          </div>
+          <div class="d-grid gap-2 mb-4">
+            <button class="btn btn-light" (click)="deleteAll()"><b>DELETE ALL</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-9 h-100">
+      <div class="row h-100">
+        <div class="results col-12 p-3">
+          <div class="row h-100 overflow-auto">
+            <div class="col-6 p-3" *ngFor="let todo of todos">
+              <div class="card todo">
+                <div class="card-body">
+                  <div class="d-flex top">
+                    <h4 class="card-title "><b>{{todo.title}}</b></h4>
+                    <svg (click)="toggleStatus(todo.id)" xmlns="http://www.w3.org/2000/svg" width="30" height="30" [style.fill]="todo.status! | togstatus" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </svg>
+                  </div>
+                  <p class="card-text m-0">{{todo.description}}</p>
+                  <p class="card-text m-0"><b>Date:</b> {{todo.date}}</p>
+                  <svg (click)="deleteTodo(todo.id)" xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-trash3" viewBox="0 0 16 16">
+                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-12 h-100 w-100 m-0" *ngIf="todomaker == true">
+  <div class="row m-0 h-100 addb">
+    <div class="card w-50 h-50 p-4">
+      <svg (click)="todomaker = false" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#198753" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"/>
+      </svg>
+      <h3 class="text-dark mb-2 text-center"><b>NEW TASK</b></h3>
+      <form #f="ngForm" (ngSubmit)="addTodo()">
+        <div class="mb-3">
+          <input type="text" [(ngModel)]="todo.title" class="form-control w-75 d-inline mb-3" id="title"  name="title" placeholder="Task's title" required />
+          <button class="btn btn-success w-25 d-inline m-0" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" class="bi bi-plus-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+          </button>
+          <textarea [(ngModel)]="todo.description" id="description" class="form-control" name="description" rows="9" cols="25" placeholder="Task's description" required></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

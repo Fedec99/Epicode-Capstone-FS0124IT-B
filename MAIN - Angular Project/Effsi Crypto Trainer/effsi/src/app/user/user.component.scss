@@ -1,0 +1,42 @@
+.uimg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  .h3{
+    font-weight: 900;
+  }
+}
+.szone{
+  .logout{
+    border-radius: 35px;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    &:hover{
+      background-color: darkred;
+      color: whitesmoke;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    &:active{
+      transform: scale(1.01);
+    }
+  }
+}
+.sup{
+  border-radius: 35px;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  &:hover{
+    background-color: lightgray;
+    color: whitesmoke;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  &:active{
+    transform: scale(1.01);
+  }
+}

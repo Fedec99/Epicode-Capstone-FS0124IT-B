@@ -1,0 +1,25 @@
+<div class="col-12 p-5 d-flex" (click)="error = undefined">
+<div class="card p-5 h-75 w-75">
+  <a [routerLink]="['/auth']"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#167a4c" class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"/>
+  </svg></a>
+  <div class="card-body h-100">
+    <h4 class="card-title">LOGIN</h4>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <input type="text" ngModel class="form-control" id="username"  name="username" placeholder="@yourusernamehere" required />
+      </div>
+      <div class="mb-3">
+        <input type="password" ngModel class="form-control" id="password" name="password" placeholder="Password123!" required />
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-success" type="submit">Login</button>
+      </div>
+    </form>
+    <div class="err p-2 mt-1" *ngIf="error != undefined">
+      {{error}}
+    </div>
+  </div>
+</div>
+</div>
+

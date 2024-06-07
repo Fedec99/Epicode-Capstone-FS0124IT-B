@@ -1,0 +1,53 @@
+.upmzone{
+  height: 15%;
+  z-index: 1;
+}
+form{
+  .search{
+      outline-color: #198753;
+      border-style: solid;
+      border: 2px, solid, lightgray;
+      padding: 10px;
+      border-radius: 50px;
+      width: 90%;
+      margin-right: 2.5%;
+
+  }
+  button{
+    border-radius: 50px;
+    &:active{
+      box-shadow:0 0 10px #198753;
+    }
+  }
+}
+.results{
+  color: black;
+  height: 85%;
+  .asset{
+    cursor: pointer;
+    &:hover{
+      background-color: lightgray;
+    }
+    &:active{
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      transform: scale(1.05);
+    }
+    .ticker{
+      font-weight: 900;
+    }
+  }
+}
+.watch{
+  background-color: #114f326d;
+  color: whitesmoke;
+  border-radius: 25px;
+  cursor: pointer;
+  &:hover{
+    background-color: white;
+    color: #135938;
+  }
+}
+.card{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}

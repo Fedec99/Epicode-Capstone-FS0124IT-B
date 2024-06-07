@@ -1,0 +1,33 @@
+<div class="col-12 h-100 w-100 m-0" *ngIf="help == false">
+  <div class="row m-0 h-100">
+    <div class="landing col-6 p-5 m-0 h-100">
+      <h1>Effsi</h1>
+      <p class="slogan">Handle your funds in a new way.</p>
+      <img src="assets/basics/graphic-man.jpg" alt="A man looking at some charts.">
+    </div>
+    <div class="auth col-12 col-md-6 p-5 m-0 h-100">
+      <div class="card p-5">
+          <p class="slogan">"The more you learn, the more you earn." - Warren Buffett</p>
+          <img class="card-img-top" src="assets/basics/crypto.jpg" alt="My logo.">
+          <button class="btn btn-success shadow my-5" [routerLink]="['/auth', 'login']">LOGIN</button>
+          <button class="btn btn-success shadow" [routerLink]="['/auth', 'register']">REGISTER</button>
+          <p class="pt-4">Need <a class="help" (click)="help = true">Help</a>?</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-12 h-100 w-100 m-0" *ngIf="help == true" (click)="help = false">
+  <div class="row m-0 h-100">
+    <div class="col-12 p-1 p-lg-5 hbox">
+      <div class="card p-4 p-lg-5 hc w-75  w-lg-50">
+      <h3 class="title text-center pb-4">
+        What you need to know before you start using effsi.
+      </h3>
+        <p class="text-center">Effsi is a web application that allows you to track the trend of your investments, from stocks, to cryptos, REIT, ETFs and all the assets you know.</p>
+        <p class="text-center">You will also have the opportunity to simulate an investment plan or observe the trend of the markets in the last decade, plus you will have access to the most important news of the moment!</p>
+        <p class="text-center">Effsi was born with the idea of giving you the opportunity to improve the management of your money, manage wallets, assets, movements and conversions, create tasks and analyze your funds through our various tools!</p>
+      <button class="btn btn-success shadow" [routerLink]="['/auth','register']">LET'S START!</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+.todo{
+  &:hover{
+    background-color: lightgrey;
+    transform: scale(1.05);
+  }
+  .top{
+    justify-content: space-between;
+    align-items: center;
+
+  }
+}
+svg{
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.05);
+  }
+}
+.card{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}
+.addb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add{
+  .btn{
+    background-color:#ffffff ;
+    border: 0;
+    border-radius: 35px;
+    color: #105836;
+    font-weight: 900;
+    &:hover{
+      background-color:#105836;
+      color: #ffffff;
+
+    }
+  }
+}
+.bb{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .bc{
+    background-color: #0d462b97;
+    width: 90%;
+    height: 20%;
+    border-radius: 25px;
+  }
+  .ft{
+    background-color: #ffffff;
+    height: 100%;
+    border-radius: 25px;
+  }
+}
+.del{
+  .btn{
+    border-radius: 35px;
+    padding: 2%;
+    color: #105836;
+    &:hover{
+      background-color: darkred;
+      color: whitesmoke;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    &:active{
+      transform: scale(1.01);
+    }
+  }
+}

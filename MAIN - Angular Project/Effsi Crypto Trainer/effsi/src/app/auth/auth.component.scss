@@ -1,0 +1,62 @@
+.row{
+justify-content: center;
+align-items: center;
+
+  h1{
+    font-size: 5rem;
+    font-weight: 900;
+    color: #167a4c;
+    margin-bottom: 0;
+  }
+  .slogan{
+    font-style: italic;
+  }
+  .auth{
+    display: flex;
+    align-items: center;
+    .card{
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      border-radius: 25px;
+    }
+  }
+  img{
+    width: 90%;
+    box-sizing: border-box;
+  }
+  button{
+    &:hover{
+      font-weight: bold;
+      transform: scale(1.01);
+    }
+  }
+}
+.help{
+  color: #167a4c;
+  font-weight: bold;
+  cursor: pointer;
+  &:visited{
+    color:  #167a4c;
+  }
+}
+.hc{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+  .title{
+    font-weight: bolder;
+    font-size: xx-large;
+    color:  #167a4c;
+  }
+  p{
+    font-size: large;
+    border-bottom: 1px solid #167a4c;
+    margin-bottom: 5%;
+  }
+}
+.hbox{
+  display: flex;
+  justify-content: center;
+}
+.card{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}

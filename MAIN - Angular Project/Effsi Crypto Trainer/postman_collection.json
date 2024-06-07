@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "8c628077-2e4d-4733-a35a-8a3f0c6b6d53",
+		"name": "HODLE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28910031"
+	},
+	"item": [
+		{
+			"name": "REGISTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Andrea\",\n    \"username\": \"@andbardii\",\n    \"currency\": \"EUR\",\n    \"email\": \"andbardii@icloud.com\",\n    \"password\": \"querty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"@andbardii\",\n    \"password\": \"querty\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD WALLET",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRiYXJkaWlAaWNsb3VkLmNvbSIsImlhdCI6MTY5MzkxODQ1NiwiZXhwIjoxNjk0NzgyNDU2fQ.0NDfLQNivZKtBuKtDOhJ5oN8zMIWEICoaQr-mNEkiKg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\"CONTO_TITOLI\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/wallet/add/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"wallet",
+						"add",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD ASSET",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRiYXJkaWlAaWNsb3VkLmNvbSIsImlhdCI6MTY5MzkxMDYwMSwiZXhwIjoxNjk0Nzc0NjAxfQ.ILe60EjAgfncsuoHyhM-ueLAppRKLiKgV9lKsnY5G8I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"walletId\": 1,\n    \"name\":\"Vanguard Black 3\",\n    \"ticker\": \"VanguardGB\",\n    \"assetType\": \"ETF\",\n    \"assetClass\": \"BOND\",\n    \"zone\": \"World\",\n    \"issuer\": \"Vanguard\",\n    \"intermediary\": \"Degiro\",\n    \"amount\": 1.00,\n    \"isin\": \"IE99BK5BQT99\",\n    \"tax\": 26.00,\n    \"exchange\": \"XETRA\",\n    \"averagePurchasePrice\": 100.00,\n    \"paidCommission\": 0.00,\n    \"marketPrice\": 200.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/asset/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"asset",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INCOMING",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRiYXJkaWlAaWNsb3VkLmNvbSIsImlhdCI6MTY5MzkwNzg3OSwiZXhwIjoxNjk0NzcxODc5fQ.Ah3pVCon_7QIXG9i1NR3b5cbOiI8iPaxX72056cL2WA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1.00",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movement/incoming/1/1/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movement",
+						"incoming",
+						"1",
+						"1",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OUTGOING",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRiYXJkaWlAaWNsb3VkLmNvbSIsImlhdCI6MTY5MzkwNzg3OSwiZXhwIjoxNjk0NzcxODc5fQ.Ah3pVCon_7QIXG9i1NR3b5cbOiI8iPaxX72056cL2WA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1.00",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movement/outgoing/1/1/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movement",
+						"outgoing",
+						"1",
+						"1",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TRANSFER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRiYXJkaWlAaWNsb3VkLmNvbSIsImlhdCI6MTY5Mzk4MjE5NiwiZXhwIjoxNjk0ODQ2MTk2fQ.mShELj3QKlAj9o7eKwgloZuJ6CsnkUR_TD6Lh19ysZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1.00",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movement/transfer/1/3/2/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movement",
+						"transfer",
+						"1",
+						"3",
+						"2",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONVERT",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRiYXJkaWlAaWNsb3VkLmNvbSIsImlhdCI6MTY5Mzk4MjE5NiwiZXhwIjoxNjk0ODQ2MTk2fQ.mShELj3QKlAj9o7eKwgloZuJ6CsnkUR_TD6Lh19ysZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"walletId\": 3,\n    \"name\":\"Euro\",\n    \"ticker\": \"EUR\",\n    \"assetType\": \"FIAT\",\n    \"assetClass\": \"FIAT\",\n    \"zone\": \"World\",\n    \"intermediary\": \"Degiro\",\n    \"amount\": 100.00,\n    \"marketPrice\": 1.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movement/convert/1/3/2/10.00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movement",
+						"convert",
+						"1",
+						"3",
+						"2",
+						"10.00"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

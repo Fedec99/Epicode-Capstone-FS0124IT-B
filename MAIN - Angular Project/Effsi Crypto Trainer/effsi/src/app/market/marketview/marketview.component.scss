@@ -1,0 +1,27 @@
+.name{
+  font-weight: 900;
+}
+.change{
+  border-radius: 50px;
+  font-weight: 900;
+}
+.data{
+  height: 10%;
+}
+.chart{
+  height: 90%;
+  .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    .times{
+      height: 10%;
+    }
+
+  }
+}
+.card{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}

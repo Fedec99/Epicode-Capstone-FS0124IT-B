@@ -1,0 +1,6 @@
+export enum Wallettype {
+  CONTO_CORRENTE,
+	CONTO_TITOLI,
+	CONTO_DEPOSITO,
+	CRYPTO_WALLET
+}

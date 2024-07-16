@@ -4,7 +4,7 @@
 }
 form{
   .search{
-      outline-color: #198753;
+      outline-color: #8335dc;
       border-style: solid;
       border: 2px, solid, lightgray;
       padding: 10px;
@@ -16,7 +16,7 @@ form{
   button{
     border-radius: 50px;
     &:active{
-      box-shadow:0 0 10px #198753;
+      box-shadow:0 0 10px #8335dc;
     }
   }
 }
@@ -38,13 +38,13 @@ form{
   }
 }
 .watch{
-  background-color: #114f326d;
+  background-color: #31114f6d;
   color: whitesmoke;
   border-radius: 25px;
   cursor: pointer;
   &:hover{
     background-color: white;
-    color: #135938;
+    color: #181359;
   }
 }
 .card{
